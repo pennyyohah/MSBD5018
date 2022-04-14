@@ -81,15 +81,17 @@ def per_post_precision_recall_f1(predictions, gold):
 def main():
   """Train and eval a spacy named entity tagger for toxic spans."""
   # Read data for train set
+  # import os
+  # print(os.path.abspath(__file__))
   print('loading training data')
-  train = read_datafile('../data/tsd_train.csv')
+  train = read_datafile('data/tsd_train.csv')
 
   # Read trial data for validation set
-  validation = read_datafile('../data/tsd_trial.csv')
+  validation = read_datafile('data/tsd_trial.csv')
 
   # Read data for test set
   print('loading test data')
-  test = read_datafile('../data/tsd_test.csv')
+  test = read_datafile('data/tsd_test.csv')
 
   # Convert training data to Spacy Entities
   nlp = spacy.load("en_core_web_sm")
