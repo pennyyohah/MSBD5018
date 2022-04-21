@@ -40,7 +40,7 @@ train_set['spans'] = train_set['spans'].apply(lambda x : json.loads(x))
 #
 # print(spans_test)
 
-result =  pd.read_csv("ensemble_intersect.txt",sep="\t", header=None)
+result =  pd.read_csv("../spans-pred.txt",sep="\t", header=None)
 result[1] = result[1].apply(lambda x : json.loads(x))
 
 f1_toxic = avg_f1(test_set['spans'].to_numpy(),result[1].to_numpy())
